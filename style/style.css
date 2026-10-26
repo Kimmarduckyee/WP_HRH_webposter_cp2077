@@ -1,0 +1,545 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    position: relative;
+    user-select: none;
+}
+
+/* 백그라운드 */
+.background {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    transform: scale(1.06);
+    translate: calc(var(--mx, 0) * 14px) calc(var(--my, 0) * 10px);
+    transition: translate 0.2s ease-out;
+}
+
+/* 브이 스탠딩 */
+.standing-v {
+    position: absolute;
+    bottom: -1%;
+    left: 19%;
+    height: 81%;
+    z-index: 4; 
+   translate: calc(var(--mx, 0) * -34px) 0px;
+    transition: translate 0.15s ease-out, filter 0.2s ease;
+}
+
+/* 조니 스탠딩 */
+.standing-johnny {
+    position: absolute;
+    bottom: -23%;
+    left: 46%;
+    height: 95%;
+    z-index: 3; 
+    translate: calc(var(--mx, 0) * -16px) 0px;
+    transition: translate 0.15s ease-out, filter 0.2s ease;
+}
+
+/* 탑라인 */
+.top {
+    position: absolute;
+    bottom: 92%;
+    left: 0%;
+    height: 11%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* 바텀라인 */
+.bottom {
+    position: absolute;
+    bottom: -4%;
+    left: 0%;
+    height: 11%;
+    z-index: 2; 
+    pointer-events: none;
+}
+
+/* cdpr로고 */
+.cdpr-logo {
+    position: absolute;
+    bottom: 89%;
+    left: 93%;
+    height: 6%;
+    z-index: 4; 
+    pointer-events: none;
+}
+
+/* 미니플랫폼로고들 */
+.pf-logo {
+    position: absolute;
+    bottom: 8%;
+    height: 4%;
+    z-index: 2; 
+}
+
+/* 하단 움직이는 택스트 */
+
+.ticker-wrap {
+  position: absolute;
+  bottom: 3.5%;       
+  left: 0%;        
+  width: 100%;        
+  z-index: 2;         
+  overflow: hidden;    
+  white-space: nowrap;
+  background: transparent;
+  user-select: none;
+}
+
+.ticker-move {
+  display: inline-flex;
+  animation: ticker-slide 24s linear infinite;
+}
+
+.ticker-item {
+  color: #000000;          
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-right: 40px;      
+}
+
+@keyframes ticker-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* 사펑로고 */
+
+.logo-wrapper {
+  position: absolute;
+  bottom: 64%;
+  left: 25%;
+  height: 49%;
+  z-index: 12;
+  pointer-events: none;
+  translate: calc(var(--mx, 0) * 8px) calc(var(--my, 0) * 5px);
+  transition: translate 0.2s ease-out;
+}
+
+.glitch-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: auto;
+  user-select: none;
+}
+
+.glitch-img.base {
+  position: relative;
+  z-index: 1;
+  animation: intro-shake 1.2s steps(2, start) 1;
+}
+
+.glitch-img.red-slice {
+  z-index: 2;
+  opacity: 0;
+  animation: 
+    intro-glitch-red 1.2s steps(2, start) 1,
+    loop-glitch-red 4.5s 1.2s infinite;
+}
+
+.glitch-img.cyan-slice {
+  z-index: 3;
+  opacity: 0;
+  animation: 
+    intro-glitch-cyan 1.2s steps(2, start) 1,
+    loop-glitch-cyan 4.5s 1.2s infinite;
+}
+
+@keyframes intro-shake {
+  0% { transform: translate(-10px, 3px) skewX(-4deg); }
+  20% { transform: translate(12px, -4px) skewX(5deg); }
+  40% { transform: translate(-6px, 2px); }
+  60% { transform: translate(8px, -2px) skewX(-2deg); }
+  80% { transform: translate(-2px, 1px); }
+  100% { transform: translate(0) skewX(0); }
+}
+
+@keyframes intro-glitch-red {
+  0% {
+    opacity: 1;
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(-18px, -4px) skewX(-12deg);
+    filter: drop-shadow(5px 0 #ff003c);
+  }
+  25% {
+    clip-path: inset(65% 0 5% 0);
+    transform: translate(16px, 6px) skewX(8deg);
+  }
+  50% {
+    clip-path: inset(30% 0 35% 0);
+    transform: translate(-14px, 2px);
+  }
+  75% {
+    clip-path: inset(5% 0 60% 0);
+    transform: translate(8px, -3px) skewX(-4deg);
+  }
+  90% {
+    clip-path: inset(80% 0 10% 0);
+    transform: translate(-3px, 1px);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0);
+  }
+}
+
+@keyframes intro-glitch-cyan {
+  0% {
+    opacity: 1;
+    clip-path: inset(60% 0 15% 0);
+    transform: translate(18px, 4px) skewX(12deg);
+    filter: drop-shadow(-5px 0 #00f0ff);
+  }
+  25% {
+    clip-path: inset(15% 0 65% 0);
+    transform: translate(-16px, -5px) skewX(-8deg);
+  }
+  50% {
+    clip-path: inset(50% 0 20% 0);
+    transform: translate(12px, -2px);
+  }
+  75% {
+    clip-path: inset(20% 0 45% 0);
+    transform: translate(-8px, 3px) skewX(4deg);
+  }
+  90% {
+    clip-path: inset(5% 0 85% 0);
+    transform: translate(3px, -1px);
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0);
+  }
+}
+
+@keyframes loop-glitch-red {
+  0%, 91%, 100% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  92% {
+    opacity: 0.85;
+    clip-path: inset(25% 0 55% 0);
+    transform: translate(-4px, -1px);
+    filter: drop-shadow(2px 0 #ff003c);
+  }
+  95% {
+    opacity: 0.85;
+    clip-path: inset(65% 0 10% 0);
+    transform: translate(3px, 1px);
+  }
+  97% {
+    opacity: 0.5;
+    clip-path: inset(10% 0 75% 0);
+    transform: translate(-2px, 0);
+  }
+}
+
+@keyframes loop-glitch-cyan {
+  0%, 91%, 100% {
+    opacity: 0;
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  93% {
+    opacity: 0.85;
+    clip-path: inset(70% 0 12% 0);
+    transform: translate(4px, 1px);
+    filter: drop-shadow(-2px 0 #00f0ff);
+  }
+  96% {
+    opacity: 0.85;
+    clip-path: inset(15% 0 60% 0);
+    transform: translate(-3px, -1px);
+  }
+  98% {
+    opacity: 0.5;
+    clip-path: inset(45% 0 30% 0);
+    transform: translate(2px, 0);
+  }
+}
+
+/* Hud카드 */
+
+.clickable-char {
+  cursor: pointer;
+}
+
+.clickable-char:hover {
+  filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.7));
+}
+
+.hud-card {
+  position: absolute;
+  z-index: 25;
+  width: 330px;
+  height: 220px;
+  user-select: none;
+  transform-origin: top center;
+  transform: scaleY(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.25s ease, 
+              translate 0.15s ease-out;
+}
+
+.hud-card.active {
+  transform: scaleY(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hud-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hud-bg.flip-x {
+  transform: scaleX(-1);
+}
+
+.hud-img-yellow {
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hud-img-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.hud-title {
+  color: #fcee0a;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  margin: 0;
+}
+
+.hud-desc {
+  color: #fcee0a;
+  font-family: 'Nanum Gothic Coding', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* (V) */
+
+.v-card {
+  left: 5%;
+  bottom: 42%;
+  translate: calc(var(--mx, 0) * -34px) 0px;
+}
+
+.content-v {
+  position: absolute;
+  z-index: 5;
+  top: 25px;        
+  right: 60px;      
+  text-align: right;
+  width: 240px;      
+}
+
+.title-v {
+  font-size: 3.5rem;
+  line-height: 0.9;
+  margin-bottom: 6px;
+}
+
+.line-v {
+  position: absolute;
+  top: 100%;
+  left: 200px;
+  width: 85px;
+  height: 50px;
+  border-left: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+/* (조니) */
+
+.johnny-card {
+  right: 8%;
+  bottom: 42%;
+  translate: calc(var(--mx, 0) * -16px) 0px;
+}
+
+.content-johnny {
+  position: absolute;
+  z-index: 5;
+  top: 25px;        
+  left: 35px;      
+  text-align: left;
+  width: 190px;     
+}
+
+.title-johnny {
+  font-size: 2.5rem;
+  line-height: 1.05;
+  margin-bottom: 8px; 
+}
+
+.line-johnny {
+  position: absolute;
+  top: 48%;
+  right: 100%;
+  width: 75px;
+  height: 3px;
+  background-color: #000000;
+}
+
+/* 
+마우스 포인터 */
+body {
+  cursor: url('../assets/Pointer.png') 0 0, auto;
+}
+
+.clickable-char, .pf-logo {
+  cursor: url('../assets/Pointer.png') 0 0, pointer;
+}
+
+/* 마우스 잔상 */
+
+.sandevistan-ghost {
+  position: fixed;
+  width: 32px;
+  height: 40px;
+  pointer-events: none;   
+  z-index: 9999;           
+  user-select: none;
+  animation: sande-fade 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes sande-fade {
+  0% {
+    opacity: 0.85;
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px var(--glow));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+    filter: drop-shadow(0 0 12px var(--glow));
+  }
+}
+
+/* 글로우 */
+
+/* 브이 */
+
+.glow-v-collar {
+  position: absolute;
+  bottom: 47%;
+  width: 100px;
+  height: 90px;
+  border-radius: 40%;
+  pointer-events: none; 
+  z-index: 5;           
+
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.95) 0%, rgba(0, 240, 255, 0.4) 40%, transparent 70%);
+  mix-blend-mode: screen; /* 캐릭터 옷감 텍스처를 살리면서 빛만 합성 */
+
+
+  translate: calc(var(--mx, 0) * -34px) 0px;
+  transition: translate 0.15s ease-out;
+
+  animation: v-neon-pulse 2.2s infinite ease-in-out;
+}
+
+/* (조니) */
+.glow-johnny-hand {
+  position: absolute;
+  /* 조니 손 위치에 맞춘 대략적인 좌표 */
+  left: 76%;
+  bottom: 27.5%;
+  width: 75px;
+  height: 100px;
+  border-radius: 60%;
+  pointer-events: none;
+  z-index: 5;
+
+  background: radial-gradient(circle, rgba(255, 0, 60, 1) 0%, rgba(255, 0, 60, 0.5) 35%, transparent 70%);
+  mix-blend-mode: screen;
+
+  translate: calc(var(--mx, 0) * -16px) 0px;
+  transition: translate 0.15s ease-out;
+
+  animation: johnny-fire-flicker 1.8s infinite ease-in-out;
+}
+
+
+@keyframes v-neon-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.95);
+    filter: drop-shadow(0 0 10px #00f0ff);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px #00f0ff);
+  }
+  72% {
+    opacity: 0.4;
+  }
+  74% {
+    opacity: 1;
+  }
+}
+
+@keyframes johnny-fire-flicker {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px #ff003c);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 18px #ff003c);
+  }
+  60% {
+    opacity: 0.65;
+    transform: scale(0.9);
+  }
+  85% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}

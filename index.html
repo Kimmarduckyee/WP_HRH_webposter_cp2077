@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberpunk_2077_webposter</title>
+    <!-- 1. Reset CSS : 브라우저 기본 스타일 초기화 -->
+    <link rel="stylesheet" href="./style/reset.css" />
+    <!-- 2. Main CSS : 우리가 작성한 디자인 적용 -->
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 3. jQuery Library : jQuery CDN 연결-->
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 4. My JavaScript : 우리가 작성한 스크립트 코드 연결 -->
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body scroll="no">
+    <!-- 사펑로고 -->
+    <div class="logo-wrapper">
+    <img src="./assets/Cyberpunk-2077-logo.png" class="glitch-img base" alt="Cyberpunk 2077 Logo">
+    <img src="./assets/Cyberpunk-2077-logo-red.png" class="glitch-img red-slice" alt="Cyberpunk 2077 Logo">
+    <img src="./assets/Cyberpunk-2077-logo-blue.png" class="glitch-img cyan-slice" alt="Cyberpunk 2077 Logo">
+</div>
+    <!-- --------- -->
+    <img src="./assets/Night-City-Background.png" class="background" alt="나이트시티배경"/>
+    <img src="./assets/Top.png" class="top" alt="탑라인"/>
+    <img src="./assets/Bottom.png" class="bottom" alt="바텀라인"/>
+    <img src="./assets/Cdpr-logo.png" class="cdpr-logo" alt="cdpr로고"/>
+    <!-- 미니플랫폼로고들 -->
+    <img src="./assets/nintendo.png" class="pf-logo" alt="닌텐도" style="left: 70px;"/>
+    <img src="./assets/ps.png" class="pf-logo" alt="플스" style="left: 130px;"/>
+    <img src="./assets/steam.png" class="pf-logo" alt="스팀" style="height: 5%; bottom: 7.5%; left: 10px;"/>
+    <img src="./assets/xbox.png" class="pf-logo" alt="엑스박스" style="left: 190px;"/>
+    <!-- 하단 움직이는 텍스트! -->
+    <div class="ticker-wrap">
+      <div class="ticker-move">
+        <span class="ticker-item">/// LEGEND OR GET FORGOTTEN /// ------- /// CYBERPUNK 2077 /// ------- /// BECOME A LEGEND /// ------- /// NO RETIREMENT IN NIGHT CITY /// ------- </span>
+       <span class="ticker-item">/// LEGEND OR GET FORGOTTEN /// ------- /// CYBERPUNK 2077 /// ------- /// BECOME A LEGEND /// ------- /// NO RETIREMENT IN NIGHT CITY /// ------- </span>
+      </div>
+    </div>
+<!-- 조니와 브이 스탠딩 + 허드 -->
+
+<img src="assets/Johnny-Silverhand.png" class="standing-johnny clickable-char" alt="Johnny Silverhand">
+<img src="assets/V.png" class="standing-v clickable-char" alt="V">
+
+<!-- (글로우효과) -->
+<div class="glow-v-collar" style="left: 32%;"></div>
+<div class="glow-v-collar" style="left: 43%; height: 40px;"></div>
+<div class="glow-johnny-hand"></div>
+
+<!-- (카드) -->
+<div id="card-v" class="hud-card v-card">
+  <div class="hud-bg flip-x">
+    <img src="assets/Hud2.png" class="hud-img-yellow" alt="">
+    <img src="assets/Hud1.png" class="hud-img-black" alt="">
+  </div>
+  <div class="hud-content content-v">
+    <h2 class="hud-title title-v">V</h2>
+    <p class="hud-desc desc-v">
+      /// A merc working their
+      way up the ranks to Night City
+      legend. Slowly overwriting personality with that of Johnny.
+    </p>
+  </div>
+
+  <div class="guide-line line-v"></div>
+</div>
+
+<div id="card-johnny" class="hud-card johnny-card">
+ 
+  <div class="hud-bg">
+    <img src="assets/Hud2.png" class="hud-img-yellow" alt="">
+    <img src="assets/Hud1.png" class="hud-img-black" alt="">
+  </div>
+
+  <div class="hud-content content-johnny">
+    <h2 class="hud-title title-johnny">JOHNNY<br>SILVERHAND</h2>
+    <p class="hud-desc desc-johnny">
+      /// One of Night City's<br>
+      most iconic figures.<br>
+      Stuck inside V's head.
+    </p>
+  </div>
+
+  <div class="guide-line line-johnny"></div>
+</div>
+  </body>
+</html>

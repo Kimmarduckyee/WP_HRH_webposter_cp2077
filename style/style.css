@@ -290,24 +290,18 @@ body {
   filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.7));
 }
 
+
 .hud-card {
   position: absolute;
   z-index: 25;
   width: 330px;
   height: 220px;
   user-select: none;
-  transform-origin: top center;
-  transform: scaleY(0);
-  opacity: 0;
   pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              opacity 0.25s ease, 
-              translate 0.15s ease-out;
+  transition: translate 0.15s ease-out;
 }
 
 .hud-card.active {
-  transform: scaleY(1);
-  opacity: 1;
   pointer-events: auto;
 }
 
@@ -324,6 +318,7 @@ body {
   transform: scaleX(-1);
 }
 
+
 .hud-img-yellow {
   position: absolute;
   top: -8px;
@@ -331,7 +326,16 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.hud-card.active .hud-img-yellow {
+  transform: scaleY(1);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 
 .hud-img-black {
   position: absolute;
@@ -340,6 +344,37 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
+  transform-origin: top center;
+  transform: scaleY(0);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hud-card.active .hud-img-black {
+  transform: scaleY(1);
+  transition: transform 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
+}
+
+
+.hud-content {
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.hud-card.active .hud-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease 0.14s, transform 0.25s ease 0.14s;
+}
+
+.guide-line {
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.hud-card.active .guide-line {
+  opacity: 1;
+  transition: opacity 0.2s ease 0.1s;
 }
 
 .hud-title {
@@ -466,7 +501,7 @@ body {
 .glow-v-collar {
   position: absolute;
   bottom: 47%;
-  width: 100px;
+  width: 90px;
   height: 90px;
   border-radius: 40%;
   pointer-events: none; 
